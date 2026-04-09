@@ -11,7 +11,7 @@ import type { ApiResponse, HealthCheck, User } from "shared";
 const tokenStore = new Map<string, { access_token: string; refresh_token?: string }>();
 
 const app = new Elysia()
-  .use(cors({ origin: ["http://localhost:5173", "http://localhost:5174"], credentials: true }))
+.use(cors({ origin: ["http://localhost:5173", "http://localhost:5174", "http://44.222.193.229:5173"], credentials: true}))
   .use(swagger())
   .use(cookie())
 
