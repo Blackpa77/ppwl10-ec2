@@ -53,9 +53,7 @@ const app = new Elysia()
       data: users,
       message: "User list retrieved",
     };
-  });
-
-app.listen(3000);
+  })
 
   // Redirect mahasiswa ke halaman login Google
   .get("/auth/login", ({ redirect }: { redirect: (url: string) => Response }) => {
@@ -86,7 +84,7 @@ app.listen(3000);
 
     // Set cookie session
     session.value = sessionId;
-    session.maxAge = 60 * 60 * 24; // 1 hari
+    session.maxAge = 60 * 60 * 24; 
 
     // Redirect ke frontend
     return redirect("http://localhost:5173/classroom");
@@ -166,4 +164,3 @@ console.log(`📖 GOOGLE_REDIRECT_URI: ${process.env.GOOGLE_REDIRECT_URI}`);
 console.log(`📖 Swagger → http://localhost:${app.server?.port}/swagger`);
 
 export type App = typeof app;
-console.log(`🦊 Backend → http://localhost:3000`);
